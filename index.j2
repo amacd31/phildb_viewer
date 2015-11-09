@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhilDB viewer</title>
+    <link rel="stylesheet" href="static/css/foundation.css" />
+    <script src="static/js/vendor/modernizr.js"></script>
+    <script type='text/javascript' src="static/js/vendor/dygraph-combined.js"></script>
+    <script type='text/javascript' src="static/js/phildb_viewer.js"></script>
+    <script id='data_script' type='text/javascript'></script>
+    <script id='source_script' type='text/javascript'></script>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="">
+        <h1>PhilDB viewer</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>Selector</h2>
+      <div class="large-4 columns">
+        <select id="frequency">
+            <option value='D'>Daily</option>
+            <option value='MS'>Monthly</option>
+        </select>
+        <select id="timeseries_id">
+            {{ timeseries_ids }}
+        </select>
+        <select id="source">
+            {{ sources }}
+        </select>
+        <a id="run" href="#" onclick="update()" class="small button">Process</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="">
+        <div id="graph"></div>
+      </div>
+    </div>
+
+    <script src="static/js/vendor/jquery.js"></script>
+    <script src="static/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
